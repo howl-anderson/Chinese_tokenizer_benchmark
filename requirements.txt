@@ -1,0 +1,2 @@
+jieba
+git+https://github.com/howl-anderson/MicroTokenizer.git

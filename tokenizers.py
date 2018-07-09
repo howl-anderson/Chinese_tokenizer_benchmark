@@ -11,7 +11,7 @@ pynlpir.open()
 current_dir_path = os.path.dirname(os.path.abspath(__file__))
 
 segmentor = Segmentor()
-segmentor.load(os.path.join(current_dir_path, "data/ltp_data_v3.4.0"))
+segmentor.load(os.path.join(current_dir_path, "data/ltp_data_v3.4.0/cws.model"))
 
 
 def tokenizer_jieba(input_file, output_file, delim="  "):
@@ -71,7 +71,7 @@ def tokenizer_ltp(input_file, output_file, delim=" "):
         output_lines = []
         for raw_line in fp:
             line = raw_line.strip()
-            result = delim.join(Segmentor.segment(line))
+            result = delim.join(segmentor.segment(line))
 
             result_with_new_line = result + "\n"
 

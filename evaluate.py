@@ -10,7 +10,7 @@ def do_evaluate(corpus, tokenizer_name):
 
     gold_file = os.path.join(current_dir_path, "data/icwb2-data/gold/{}_test_gold.utf8".format(corpus))
     alternative_gold_file = os.path.join(current_dir_path, "data/icwb2-data/gold/{}_testing_gold.utf8".format(corpus))
-    if not os.path.exists(gold_file):
+    if not os.path.exists(gold_file):  # for fix some gold corpus such as AS uising testing in file name instead of test
         gold_file = alternative_gold_file
 
     test_file = os.path.join(current_dir_path, "workspace/{}-{}.txt".format(corpus, tokenizer_name))

@@ -2,7 +2,7 @@ import os
 
 from tabulate import tabulate
 
-from tokenizers import tokenizer_jieba, tokenizer_MicroTokenizer_with_HMM
+from tokenizers import tokenizer_jieba, tokenizer_MicroTokenizer_with_HMM, tokenizer_thulac, tokenizer_nlpir, tokenizer_ltp
 from evaluate import do_evaluate
 from score import parse_score
 
@@ -10,7 +10,10 @@ current_dir_path = os.path.dirname(os.path.abspath(__file__))
 
 tokenizer_registry = {
     'MicroTokenizer_with_HMM': tokenizer_MicroTokenizer_with_HMM,
-    'jieba': tokenizer_jieba
+    'jieba': tokenizer_jieba,
+    'thulac': tokenizer_thulac,
+    'nlpir': tokenizer_nlpir,
+    'ltp': tokenizer_ltp
 }
 
 # TODO: likely to be over-design

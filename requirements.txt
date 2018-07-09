@@ -1,5 +1,12 @@
 tabulate
 
 jieba
+
+thulac
+
+pynlpir
+
+pyltp
+
 git+https://github.com/howl-anderson/MicroTokenizer.git
 git+https://github.com/howl-anderson/MicroHMM.git

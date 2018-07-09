@@ -1,13 +1,17 @@
+import os
+
 import MicroTokenizer
 import jieba
 import thulac
 import pynlpir
-pynlpir.open()
-
 from pyltp import Segmentor
 
+pynlpir.open()
+
+current_dir_path = os.path.dirname(os.path.abspath(__file__))
+
 segmentor = Segmentor()
-segmentor.load("/path/to/your/cws/model")
+segmentor.load(os.path.join(current_dir_path, "data/ltp_data_v3.4.0"))
 
 
 def tokenizer_jieba(input_file, output_file, delim="  "):

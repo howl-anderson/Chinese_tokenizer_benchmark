@@ -1,3 +1,5 @@
+tabulate
+
 jieba
 git+https://github.com/howl-anderson/MicroTokenizer.git
 git+https://github.com/howl-anderson/MicroHMM.git

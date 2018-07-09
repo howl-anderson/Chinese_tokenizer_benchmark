@@ -3,6 +3,8 @@ import os
 import jieba
 import MicroTokenizer
 
+current_dir_path = os.path.dirname(os.path.abspath(__file__))
+
 
 def tokenizor_jieba(input_file, output_file, delim="  "):
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
@@ -47,8 +49,18 @@ def get_output_data_file(corpus="msr", tokenizor_name=""):
 
 
 if __name__ == "__main__":
-    current_dir_path = os.path.dirname(os.path.abspath(__file__))
-    input_file = os.path.join(current_dir_path, "utils/icwb2-data/testing/msr_test.utf8")
-    output_file = os.path.join(current_dir_path, "workspace/msr_microtokenizer.txt")
+    get_token_file('msr', 'MicroTokenizer_with_HMM')
 
-    tokenizor_MicroTokenizer_with_HMM(input_file, output_file)
+
+tokenizer_registry = {
+    'MicroTokenizer_with_HMM': tokenizor_MicroTokenizer_with_HMM
+}
+
+
+def get_token_file(corpus_type, tokenizer_name):
+    input_file = get_input_data_file(corpus_type)
+    output_file = get_output_data_file(tokenizer_name)
+
+    tokenizer = tokenizer_registry[tokenizer_name]
+
+    tokenizer(input_file, output_file)

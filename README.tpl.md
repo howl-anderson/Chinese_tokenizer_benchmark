@@ -19,43 +19,10 @@ SIGHAN Bakeoff 2005 `MSR` `PKU` `AS` and `CityU` at http://sighan.cs.uchicago.ed
 用 SIGHAN Bakeoff 2005 比赛中所自带的 score 脚本、test gold数据和training words数据对4个工具进行准确性测试，具体使用方法可参考：http://sighan.cs.uchicago.edu/bakeoff2005/data/icwb2-data.zip 中的readme文件。
 
 ##测试结果
-
-### PKU
-| Algorithm               |   Precision |   Recall |   F1-measure |
-|:------------------------|------------:|---------:|-------------:|
-| MicroTokenizer_with_HMM |       0.742 |    0.774 |        0.758 |
-| jieba                   |       0.853 |    0.787 |        0.818 |
-| thulac                  |       0.922 |    0.923 |        0.923 |
-| nlpir                   |       0.94  |    0.943 |        0.941 |
-| ltp                     |       0.96  |    0.946 |        0.953 |
-
-### MSR
-| Algorithm               |   Precision |   Recall |   F1-measure |
-|:------------------------|------------:|---------:|-------------:|
-| MicroTokenizer_with_HMM |       0.732 |    0.787 |        0.758 |
-| jieba                   |       0.817 |    0.812 |        0.815 |
-| thulac                  |       0.834 |    0.879 |        0.856 |
-| nlpir                   |       0.869 |    0.914 |        0.891 |
-| ltp                     |       0.868 |    0.899 |        0.883 |
-
-### CityU
-| Algorithm               |   Precision |   Recall |   F1-measure |
-|:------------------------|------------:|---------:|-------------:|
-| MicroTokenizer_with_HMM |       0.613 |    0.646 |        0.629 |
-| jieba                   |       0.748 |    0.735 |        0.742 |
-| thulac                  |       0.73  |    0.745 |        0.738 |
-| nlpir                   |       0.452 |    0.62  |        0.523 |
-| ltp                     |       0.783 |    0.801 |        0.792 |
-
-### AS
-| Algorithm               |   Precision |   Recall |   F1-measure |
-|:------------------------|------------:|---------:|-------------:|
-| MicroTokenizer_with_HMM |       0.636 |    0.66  |        0.648 |
-| jieba                   |       0.74  |    0.737 |        0.738 |
-| thulac                  |       0.732 |    0.745 |        0.738 |
-| nlpir                   |       0.485 |    0.651 |        0.556 |
-| ltp                     |       0.794 |    0.809 |        0.801 |
-
+{% for item in test_result %}
+### {{ item.title }}
+{{ item.markdown_table }}
+{% endfor %}
 
 ## 测试结论
 1. `thulac` 和 `ltp` 性能突出, 但都是不是可以商业免费使用的(如果我没理解错的话)。

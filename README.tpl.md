@@ -10,7 +10,7 @@
 4. jieba @ https://github.com/fxsjy/jieba
 5. MicroTokenizer @ https://github.com/howl-anderson/MicroTokenizer
 
-##测试数据集
+## 测试数据集
 SIGHAN Bakeoff 2005 `MSR` `PKU` `AS` and `CityU` at http://sighan.cs.uchicago.edu/bakeoff2005/
 
 本数据集是 `ACL SIGHAN` 于 2005 年组织的中文分词比赛所用的数据集，也是学术界测试分词工具的标准数据集.
@@ -18,7 +18,7 @@ SIGHAN Bakeoff 2005 `MSR` `PKU` `AS` and `CityU` at http://sighan.cs.uchicago.ed
 ## 测试方法
 用 SIGHAN Bakeoff 2005 比赛中所自带的 score 脚本、test gold数据和training words数据对4个工具进行准确性测试，具体使用方法可参考：http://sighan.cs.uchicago.edu/bakeoff2005/data/icwb2-data.zip 中的readme文件。
 
-##测试结果
+## 测试结果
 {% for item in test_result %}
 ### {{ item.title }}
 {{ item.markdown_table }}

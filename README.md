@@ -10,7 +10,7 @@
 4. jieba @ https://github.com/fxsjy/jieba
 5. MicroTokenizer @ https://github.com/howl-anderson/MicroTokenizer
 
-##测试数据集
+## 测试数据集
 SIGHAN Bakeoff 2005 `MSR` `PKU` `AS` and `CityU` at http://sighan.cs.uchicago.edu/bakeoff2005/
 
 本数据集是 `ACL SIGHAN` 于 2005 年组织的中文分词比赛所用的数据集，也是学术界测试分词工具的标准数据集.
@@ -18,25 +18,7 @@ SIGHAN Bakeoff 2005 `MSR` `PKU` `AS` and `CityU` at http://sighan.cs.uchicago.ed
 ## 测试方法
 用 SIGHAN Bakeoff 2005 比赛中所自带的 score 脚本、test gold数据和training words数据对4个工具进行准确性测试，具体使用方法可参考：http://sighan.cs.uchicago.edu/bakeoff2005/data/icwb2-data.zip 中的readme文件。
 
-##测试结果
-
-### PKU
-| Algorithm               |   Precision |   Recall |   F1-measure |
-|:------------------------|------------:|---------:|-------------:|
-| MicroTokenizer_with_HMM |       0.742 |    0.774 |        0.758 |
-| jieba                   |       0.853 |    0.787 |        0.818 |
-| thulac                  |       0.922 |    0.923 |        0.923 |
-| nlpir                   |       0.94  |    0.943 |        0.941 |
-| ltp                     |       0.96  |    0.946 |        0.953 |
-
-### MSR
-| Algorithm               |   Precision |   Recall |   F1-measure |
-|:------------------------|------------:|---------:|-------------:|
-| MicroTokenizer_with_HMM |       0.732 |    0.787 |        0.758 |
-| jieba                   |       0.817 |    0.812 |        0.815 |
-| thulac                  |       0.834 |    0.879 |        0.856 |
-| nlpir                   |       0.869 |    0.914 |        0.891 |
-| ltp                     |       0.868 |    0.899 |        0.883 |
+## 测试结果
 
 ### CityU
 | Algorithm               |   Precision |   Recall |   F1-measure |
@@ -55,6 +37,24 @@ SIGHAN Bakeoff 2005 `MSR` `PKU` `AS` and `CityU` at http://sighan.cs.uchicago.ed
 | thulac                  |       0.732 |    0.745 |        0.738 |
 | nlpir                   |       0.485 |    0.651 |        0.556 |
 | ltp                     |       0.794 |    0.809 |        0.801 |
+
+### MSR
+| Algorithm               |   Precision |   Recall |   F1-measure |
+|:------------------------|------------:|---------:|-------------:|
+| MicroTokenizer_with_HMM |       0.732 |    0.787 |        0.758 |
+| jieba                   |       0.817 |    0.812 |        0.815 |
+| thulac                  |       0.834 |    0.879 |        0.856 |
+| nlpir                   |       0.869 |    0.914 |        0.891 |
+| ltp                     |       0.868 |    0.899 |        0.883 |
+
+### PKU
+| Algorithm               |   Precision |   Recall |   F1-measure |
+|:------------------------|------------:|---------:|-------------:|
+| MicroTokenizer_with_HMM |       0.742 |    0.774 |        0.758 |
+| jieba                   |       0.853 |    0.787 |        0.818 |
+| thulac                  |       0.922 |    0.923 |        0.923 |
+| nlpir                   |       0.94  |    0.943 |        0.941 |
+| ltp                     |       0.96  |    0.946 |        0.953 |
 
 
 ## 测试结论

@@ -1,5 +1,6 @@
 tabulate
 jinja2
+joblib
 
 jieba
 

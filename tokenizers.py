@@ -14,7 +14,7 @@ segmentor = Segmentor()
 segmentor.load(os.path.join(current_dir_path, "data/ltp_data_v3.4.0/cws.model"))
 
 
-def tokenizer_jieba(input_file, output_file, delim="  "):
+def tokenizer_jieba(input_file, output_file, delim="  ", corpus=None):
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:
@@ -28,7 +28,7 @@ def tokenizer_jieba(input_file, output_file, delim="  "):
         output_fd.writelines(output_lines)
 
 
-def tokenizer_MicroTokenizer_with_HMM(input_file, output_file, delim="  "):
+def tokenizer_MicroTokenizer_with_HMM(input_file, output_file, delim="  ", corpus=None):
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:
@@ -47,7 +47,7 @@ def tokenizer_MicroTokenizer_with_HMM(input_file, output_file, delim="  "):
         output_fd.writelines(output_lines)
 
 
-def tokenizer_thulac(input_file, output_file, delim=" "):
+def tokenizer_thulac(input_file, output_file, delim=" ", corpus=None):
     thu1 = thulac.thulac(seg_only=True)   # 只进行分词，不进行词性标注
     thu1.cut_f(input_file, output_file)   # 对input.txt文件内容进行分词，输出到output.txt
 
@@ -66,7 +66,7 @@ def tokenizer_nlpir(input_file, output_file, delim=" "):
         output_fd.writelines(output_lines)
 
 
-def tokenizer_ltp(input_file, output_file, delim=" "):
+def tokenizer_ltp(input_file, output_file, delim=" ", corpus=None):
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:

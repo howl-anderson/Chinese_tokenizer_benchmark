@@ -45,7 +45,7 @@ def get_token_file(corpus_type, tokenizer_name):
 
     tokenizer = tokenizer_registry[tokenizer_name]
 
-    tokenizer(input_file, output_file)
+    tokenizer(input_file, output_file, corpus=corpus_type)
 
     return output_file
 

@@ -9,6 +9,7 @@ from joblib import Parallel, delayed
 from tokenizers import (
     tokenizer_jieba,
     tokenizer_MicroTokenizer_with_HMM,
+    tokenizer_MicroTokenizer_with_DAG,
     tokenizer_MicroTokenizer_with_join_model,
     tokenizer_MicroTokenizer_with_custom_model,
     tokenizer_thulac,
@@ -22,6 +23,7 @@ current_dir_path = os.path.dirname(os.path.abspath(__file__))
 
 tokenizer_registry = {
     'MicroTokenizer_with_HMM': tokenizer_MicroTokenizer_with_HMM,
+    'MicroTokenizer_with_DAG': tokenizer_MicroTokenizer_with_DAG,
     'tokenizer_MicroTokenizer_with_join_model': tokenizer_MicroTokenizer_with_join_model,
     'tokenizer_MicroTokenizer_with_custom_model': tokenizer_MicroTokenizer_with_custom_model,
     'jieba': tokenizer_jieba,

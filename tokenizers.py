@@ -49,6 +49,27 @@ def tokenizer_MicroTokenizer_with_HMM(input_file, output_file, delim="  ", corpu
         output_fd.writelines(output_lines)
 
 
+def tokenizer_MicroTokenizer_with_DAG(input_file, output_file, delim="  ", corpus=None):
+    MicroTokenizer.load_default_model()  # just in case
+
+    with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
+        output_lines = []
+        for raw_line in fp:
+            line = raw_line.strip()
+
+            if not line:
+                # empty line get empty result
+                result = ""
+            else:
+                result = delim.join(MicroTokenizer.cut_by_DAG(line))
+
+            result_with_new_line = result + "\n"
+
+            output_lines.append(result_with_new_line)
+
+        output_fd.writelines(output_lines)
+
+
 def tokenizer_MicroTokenizer_with_join_model(input_file, output_file, delim="  ", corpus=None):
     MicroTokenizer.load_default_model()  # just in case
 

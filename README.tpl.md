@@ -26,10 +26,15 @@ SIGHAN Bakeoff 2005 的 `MSR`、`PKU`、`AS` and `CityU` at http://sighan.cs.uch
 pip install -r ./requirements.txt
 ```
 
+如果 Mac OS 下安装 `pyltp` 出现 `MACOSX_DEPLOYMENT_TARGET` 相关的问题，请参考 [pyltp 安装](https://github.com/HIT-SCIR/pyltp#%E5%AE%89%E8%A3%85) 和 `install_pyltp_under_macos.bash`
+
+
 ### 下载许可证和模型文件
 ```bash
 bash ./install_model_or_license.bash
 ```
+
+如果遇到 `Error: unable to fetch newest license.` 那么可能是 Python 3 的 SSL 的问题，参考 [pynlpir update error](https://github.com/tsroten/pynlpir/issues/108) 或者 [How to make Python use CA certificates from Mac OS TrustStore?](https://stackoverflow.com/questions/40684543/how-to-make-python-use-ca-certificates-from-mac-os-truststore) 进行解决。
 
 ### 训练模型
 ```bash

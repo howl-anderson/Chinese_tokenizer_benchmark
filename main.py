@@ -6,39 +6,11 @@ from collections import defaultdict
 from tabulate import tabulate
 from joblib import Parallel, delayed
 
-from tokenizers import (
-    tokenizer_jieba,
-    tokenizer_MicroTokenizer_with_HMM,
-    tokenizer_MicroTokenizer_with_DAG,
-    tokenizer_MicroTokenizer_with_join_model,
-    tokenizer_MicroTokenizer_with_custom_model,
-    tokenizer_thulac,
-    tokenizer_nlpir,
-    tokenizer_ltp
-)
+from config import tokenizer_registry, corpus_registry
 from evaluate import do_evaluate
 from score import parse_score
 
 current_dir_path = os.path.dirname(os.path.abspath(__file__))
-
-tokenizer_registry = {
-    'MicroTokenizer_with_HMM': tokenizer_MicroTokenizer_with_HMM,
-    'MicroTokenizer_with_DAG': tokenizer_MicroTokenizer_with_DAG,
-    'tokenizer_MicroTokenizer_with_join_model': tokenizer_MicroTokenizer_with_join_model,
-    'tokenizer_MicroTokenizer_with_custom_model': tokenizer_MicroTokenizer_with_custom_model,
-    'jieba': tokenizer_jieba,
-    'thulac': tokenizer_thulac,
-    'nlpir': tokenizer_nlpir,
-    'ltp': tokenizer_ltp
-}
-
-# TODO: likely to be over-design
-corpus_registry = {
-    "MSR": 'msr',
-    "AS": 'as',
-    "PKU": 'pku',
-    "CityU": "cityu"
-}
 
 
 def get_train_data_file(corpus_name="msr"):

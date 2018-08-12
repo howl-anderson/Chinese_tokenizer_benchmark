@@ -4,7 +4,7 @@ import os
 
 from jinja2 import Template
 
-from main import corpus_registry
+from config import corpus_registry
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 

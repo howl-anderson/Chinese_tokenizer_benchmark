@@ -3,7 +3,8 @@
 import os
 
 from MicroTokenizer.train.train import train
-from main import corpus_registry, get_train_data_file
+from main import get_train_data_file
+from config import corpus_registry
 
 for corpus in corpus_registry.values():
     input_file_list = [get_train_data_file(corpus)]

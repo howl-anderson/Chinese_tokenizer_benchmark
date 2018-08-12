@@ -98,7 +98,7 @@ def tokenizer_thulac(input_file, output_file, delim=" ", corpus=None):
     thu1.cut_f(input_file, output_file)   # 对input.txt文件内容进行分词，输出到output.txt
 
 
-def tokenizer_nlpir(input_file, output_file, delim=" "):
+def tokenizer_nlpir(input_file, output_file, delim=" ", corpus=None):
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:

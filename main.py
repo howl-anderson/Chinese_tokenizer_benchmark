@@ -101,7 +101,7 @@ if __name__ == "__main__":
 
     # re group result
     all_table = defaultdict(list)
-    for (corpus, item) in raw_table:
+    for (corpus, *item) in raw_table:
         all_table[corpus].append(item)
 
     for corpus, table in all_table.items():

@@ -80,7 +80,7 @@ def test_tokenizer_on_corpus(corpus, tokenizer):
 
     score = parse_score(score_file)
 
-    print(score)
+    print("{} on {}: {}".format(tokenizer, corpus, score))
 
     return corpus, tokenizer, score['PRECISION'], score['RECALL'], score['F1-MEASURE']
 

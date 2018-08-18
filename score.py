@@ -4,7 +4,12 @@
 
 def parse_score(score_file):
     with open(score_file, 'r') as fd:
-        lines = fd.readlines()
+        try:
+            lines = fd.readlines()
+        except Exception as e:
+            print(score_file)
+            raise
+
         raw_last_line = lines[-1]
 
         last_line = raw_last_line.strip()

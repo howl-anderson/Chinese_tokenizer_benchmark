@@ -43,6 +43,9 @@
 ##
 ## change the following per your installation:
 
+# patch for output encoding problem
+binmode(STDOUT, ":utf8");
+
 $diff = "/usr/bin/diff";
 
 $USAGE = "Usage:\t$0 dictionary truth test\n\t";
@@ -88,8 +91,10 @@ while (defined($truth = <TRUTH>) && defined($test = <TEST>)) {
     $test =~ s/\s*$//;
     $truth =~ s/(\xe3\x80\x80)|(\xa1\x40)/ /g;
     $test =~ s/(\xe3\x80\x80)|(\xa1\x40)/ /g;
-    $truth =~ s///g;
-    $test =~ s///g;
+    $truth =~ s/
+//g;
+    $test =~ s/
+//g;
     @truthwords = split /\s+/, $truth;
     @testwords = split /\s+/, $test;
     $truecount = scalar(@truthwords);

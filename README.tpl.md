@@ -74,6 +74,9 @@ python ./render_readme.py
 {{ item.markdown_table }}
 {% endfor %}
 
+## TODO
+* 添加 HanLP 作为待评测中文分词器
+
 ## 测试结论
 1. `thulac` 和 `ltp` 性能突出, 但都是不是可以商业免费使用的(如果我没理解错的话)。
 2. 比较流行的工具中 `jieba` 能商用,但性能上和以上顶级分词工具还有不少差距。

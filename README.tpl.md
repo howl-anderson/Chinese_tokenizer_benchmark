@@ -74,8 +74,10 @@ python ./render_readme.py
 {{ item.markdown_table }}
 {% endfor %}
 
-## TODO
-* 添加 HanLP 作为待评测中文分词器
+## Roadmap
+* [TODO] 添加 HanLP 作为待评测中文分词器
+* [TODO] 添加 Stanford core NLP 作为待评测中文分词器
+* [TODO] 添加 FudanNLP 作为待评测中文分词器
 
 ## 测试结论
 1. `thulac` 和 `ltp` 性能突出, 但都是不是可以商业免费使用的(如果我没理解错的话)。

@@ -1,3 +1,6 @@
+from tokenizers_collection.config import tokenizer_registry as collection_tokenizer_registry
+
+
 from tokenizers import (
     tokenizer_MicroTokenizer_with_HMM,
     tokenizer_MicroTokenizer_with_DAG,
@@ -5,24 +8,33 @@ from tokenizers import (
     tokenizer_MicroTokenizer_with_CRF,
     tokenizer_MicroTokenizer_with_custom_model,
     tokenizer_MicroTokenizer_with_custom_CRF_model,
-    tokenizer_jieba,
-    tokenizer_thulac,
-    tokenizer_nlpir,
-    tokenizer_ltp
 )
 
+
+def make_func_accept_corpus_kwarg(func):
+    def decorator(*args, **kwargs):
+        kwargs.pop('corpus')
+        return func(*args, **kwargs)
+
+    return decorator
+
+
 tokenizer_registry = {
-    'MicroTokenizer_with_HMM': tokenizer_MicroTokenizer_with_HMM,
-    'MicroTokenizer_with_DAG': tokenizer_MicroTokenizer_with_DAG,
-    'tokenizer_MicroTokenizer_with_join_model': tokenizer_MicroTokenizer_with_join_model,
-    'tokenizer_MicroTokenizer_with_CRF': tokenizer_MicroTokenizer_with_CRF,
-    'tokenizer_MicroTokenizer_with_custom_model': tokenizer_MicroTokenizer_with_custom_model,
-    'tokenizer_MicroTokenizer_with_custom_CRF_model': tokenizer_MicroTokenizer_with_custom_CRF_model,
-    'jieba': tokenizer_jieba,
-    'thulac': tokenizer_thulac,
-    'nlpir': tokenizer_nlpir,
-    'ltp': tokenizer_ltp
+    k: make_func_accept_corpus_kwarg(v)
+    for k, v in collection_tokenizer_registry.items()
 }
+
+
+tokenizer_registry.update(
+    {
+        'MicroTokenizer_with_HMM': tokenizer_MicroTokenizer_with_HMM,
+        'MicroTokenizer_with_DAG': tokenizer_MicroTokenizer_with_DAG,
+        'tokenizer_MicroTokenizer_with_join_model': tokenizer_MicroTokenizer_with_join_model,
+        'tokenizer_MicroTokenizer_with_CRF': tokenizer_MicroTokenizer_with_CRF,
+        'tokenizer_MicroTokenizer_with_custom_model': tokenizer_MicroTokenizer_with_custom_model,
+        'tokenizer_MicroTokenizer_with_custom_CRF_model': tokenizer_MicroTokenizer_with_custom_CRF_model,
+    }
+)
 
 # TODO: likely to be over-design
 corpus_registry = {

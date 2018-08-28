@@ -2,12 +2,6 @@ tabulate
 jinja2
 joblib
 
-jieba
-
-thulac
-
-pynlpir
-
-pyltp
+tokenizers_collection
 
 MicroTokenizer

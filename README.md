@@ -4,7 +4,7 @@
 本项目只测试各个常见分词软件在分词效果上的表现，着重比较各个分词方法和理论的实际效果，分词工具的速度等因素不在考虑范围内。
 
 ## 分词软件
-本文选择了4个相对常见的分词工具，分别是：哈工大 `LTP`、中科院计算所 `NLPIR`、清华大学 `THULAC`, `jieba` 和本人自己开发的 `MicroTokenizer`。
+本文选择了4个相对常见的分词工具，分别是：哈工大的 `LTP`、中科院计算所的 `NLPIR`、清华大学的 `THULAC`, [Sun Junyi](https://github.com/fxsjy) 的 `jieba` 和 [Xiaoquan Kong](https://github.com/howl-anderson) 的 `MicroTokenizer`。
 
 1. LTP @ https://github.com/HIT-SCIR/pyltp
 2. NLPIR @ https://github.com/tsroten/pynlpir

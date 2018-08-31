@@ -48,38 +48,6 @@ class ColumnProcessFunc:
             func_instance.read(v)
 
 
-class MaxValueFuncClass:
-    def __init__(self, left_append='**', right_append='**'):
-        self.interested_value = None
-        self.left_append = left_append
-        self.right_append = right_append
-
-    def read(self, column_cell_list):
-        self.interested_value = max(column_cell_list)
-
-    def produce(self, cell):
-        if cell == self.interested_value:
-            return "{}{}{}".format(self.left_append, cell, self.right_append)
-        return cell
-
-
-class MinValueFuncClass:
-    def __init__(self, left_append='**', right_append='**'):
-        self.interested_value = None
-        self.left_append = left_append
-        self.right_append = right_append
-
-    def read(self, column_cell_list):
-        self.interested_value = min(column_cell_list)
-
-    def produce(self, cell):
-        if cell == self.interested_value:
-            return "{}{}{}".format(self.left_append, cell, self.right_append)
-        return cell
-
-# TODO: MinValueFuncClass and MaxValueFuncClass should produced by some factory not by hand
-
-
 def make_a_value_function(value_func, left_append='**', right_append='**'):
     class ValueFuncClass:
         def __init__(self, value_func=value_func, left_append=left_append, right_append=right_append):

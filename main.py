@@ -11,6 +11,7 @@ from joblib import Parallel, delayed
 from config import tokenizer_registry, corpus_registry
 from evaluate import do_evaluate
 from score import parse_score
+from utils import mark_table_cell_by_column_by_func, make_a_value_function
 
 current_dir_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -79,6 +80,8 @@ def benchmark_test_performance():
         all_table[corpus].append(item)
 
     for corpus, table in all_table.items():
+        table = mark_table_cell_by_column_by_func(table, [1, 2, 3], make_a_value_function(max))
+
         table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
 
         result_file = os.path.join(current_dir_path, 'results', '{}.md'.format(corpus))
@@ -114,6 +117,8 @@ def benchmark_test_speed():
         table.append([tokenizer_name, time_cost.total_seconds()])
 
         os.unlink(output_file)
+
+    table = mark_table_cell_by_column_by_func(table, [1], make_a_value_function(min))
 
     table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
 

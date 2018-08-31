@@ -1,7 +1,7 @@
 # 中文分词软件基准测试
 
 ## 评测目标
-本项目只测试各个常见分词软件在分词效果上的表现，比较各个分词方法和理论的实际效果，对分词速度也做了简单的考核。
+本项目测试各个常见分词软件在分词效果上的表现，比较各个分词方法和理论的实际效果，对分词速度也做了简单的考核。
 
 ## 分词软件
 本文选择了4个相对常见的分词工具，分别是：哈工大的 `LTP`、中科院计算所的 `NLPIR`、清华大学的 `THULAC`, [Sun Junyi](https://github.com/fxsjy) 的 `jieba` 和 [Xiaoquan Kong](https://github.com/howl-anderson) 的 `MicroTokenizer`。

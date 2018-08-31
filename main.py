@@ -1,6 +1,8 @@
 #!/usr/bin/env python
-
+import copy
+import datetime
 import os
+import tempfile
 from collections import defaultdict
 
 from tabulate import tabulate
@@ -59,7 +61,7 @@ def test_tokenizer_on_corpus(corpus, tokenizer):
     return corpus, tokenizer, score['PRECISION'], score['RECALL'], score['F1-MEASURE']
 
 
-if __name__ == "__main__":
+def benchmark_test_performance():
     all_corpus_list = corpus_registry.values()
     all_tokenizer_list = tokenizer_registry.keys()
 
@@ -83,3 +85,44 @@ if __name__ == "__main__":
 
         with open(result_file, 'w') as fd:
             fd.write(table_content_string)
+
+
+def benchmark_test_speed():
+    non_custom_tokenizer_registry = {
+        k: v
+        for k, v in tokenizer_registry.items()
+        if 'custom' not in k
+    }
+
+    big_corpus_file = os.path.join(current_dir_path, 'data/big_corpus/data.txt')
+
+    table_header = ["Algorithm", "Time Cost (seconds)"]
+    table = []
+
+    all_tokenizer_list = non_custom_tokenizer_registry.keys()
+    for tokenizer_name in all_tokenizer_list:
+        tokenizer = tokenizer_registry[tokenizer_name]
+        file_fd, output_file = tempfile.mkstemp()
+        os.close(file_fd)
+
+        start_time = datetime.datetime.now()
+        tokenizer(big_corpus_file, output_file)
+        end_time = datetime.datetime.now()
+
+        time_cost = end_time - start_time
+
+        table.append([tokenizer_name, time_cost.total_seconds()])
+
+        os.unlink(output_file)
+
+    table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
+
+    result_file = os.path.join(current_dir_path, 'speed.md')
+
+    with open(result_file, 'w') as fd:
+        fd.write(table_content_string)
+
+
+if __name__ == "__main__":
+    benchmark_test_performance()
+    benchmark_test_speed()

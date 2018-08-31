@@ -13,7 +13,7 @@ from tokenizers import (
 
 def make_func_accept_corpus_kwarg(func):
     def decorator(*args, **kwargs):
-        kwargs.pop('corpus')
+        kwargs.pop('corpus', None)
         return func(*args, **kwargs)
 
     return decorator

@@ -1,7 +1,7 @@
 # 中文分词软件基准测试
 
 ## 评测目标
-本项目只测试各个常见分词软件在分词效果上的表现，着重比较各个分词方法和理论的实际效果，分词工具的速度等因素不在考虑范围内。
+本项目只测试各个常见分词软件在分词效果上的表现，比较各个分词方法和理论的实际效果，对分词速度也做了简单的考核。
 
 ## 分词软件
 本文选择了4个相对常见的分词工具，分别是：哈工大的 `LTP`、中科院计算所的 `NLPIR`、清华大学的 `THULAC`, [Sun Junyi](https://github.com/fxsjy) 的 `jieba` 和 [Xiaoquan Kong](https://github.com/howl-anderson) 的 `MicroTokenizer`。
@@ -69,10 +69,14 @@ python ./render_readme.py
 使用 SIGHAN Bakeoff 2005 的训练数据，模型为 HMM 和 DAG 联合模型
 
 ## 测试结果
+### 模型性能
 {% for item in test_result %}
-### {{ item.title }}
+#### {{ item.title }}
 {{ item.markdown_table }}
 {% endfor %}
+
+### 分词速度
+{{ speed_table }}
 
 ## Roadmap
 * [TODO] 添加 HanLP 作为待评测中文分词器

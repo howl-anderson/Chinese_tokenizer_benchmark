@@ -72,73 +72,73 @@ python ./render_readme.py
 ### 模型性能
 
 #### MSR
-| Algorithm                            |   Precision |   Recall |   F1-measure |
-|:-------------------------------------|------------:|---------:|-------------:|
-| jieba                                |       0.817 |    0.812 |        0.815 |
-| thulac                               |       0.834 |    0.878 |        0.856 |
-| nlpir                                |       0.869 |    0.914 |        0.891 |
-| ltp                                  |       0.868 |    0.899 |        0.883 |
-| MicroTokenizer_with_HMM              |       0.732 |    0.787 |        0.758 |
-| MicroTokenizer_with_DAG              |       0.801 |    0.81  |        0.805 |
-| MicroTokenizer_with_join_model       |       0.822 |    0.781 |        0.801 |
-| MicroTokenizer_with_CRF              |       0.828 |    0.868 |        0.847 |
-| MicroTokenizer_with_custom_model     |       0.904 |    0.87  |        0.886 |
-| MicroTokenizer_with_custom_CRF_model |       0.946 |    0.941 |        0.943 |
+| Algorithm                            | Precision   | Recall    | F1-measure   |
+|:-------------------------------------|:------------|:----------|:-------------|
+| jieba                                | 0.817       | 0.812     | 0.815        |
+| thulac                               | 0.834       | 0.878     | 0.856        |
+| nlpir                                | 0.869       | **0.914** | **0.891**    |
+| ltp                                  | 0.868       | 0.899     | 0.883        |
+| MicroTokenizer_with_HMM              | 0.732       | 0.787     | 0.758        |
+| MicroTokenizer_with_DAG              | 0.801       | 0.810     | 0.805        |
+| MicroTokenizer_with_join_model       | 0.822       | 0.781     | 0.801        |
+| MicroTokenizer_with_CRF              | 0.828       | 0.868     | 0.847        |
+| MicroTokenizer_with_custom_model     | **0.904**   | 0.870     | 0.886        |
+| MicroTokenizer_with_custom_CRF_model | 0.828       | 0.868     | 0.847        |
 
 #### AS
-| Algorithm                            |   Precision |   Recall |   F1-measure |
-|:-------------------------------------|------------:|---------:|-------------:|
-| jieba                                |       0.74  |    0.737 |        0.738 |
-| thulac                               |       0.732 |    0.745 |        0.738 |
-| nlpir                                |       0.485 |    0.651 |        0.556 |
-| ltp                                  |       0.794 |    0.809 |        0.801 |
-| MicroTokenizer_with_HMM              |       0.636 |    0.66  |        0.648 |
-| MicroTokenizer_with_DAG              |       0.46  |    0.625 |        0.53  |
-| MicroTokenizer_with_join_model       |       0.681 |    0.685 |        0.683 |
-| MicroTokenizer_with_CRF              |       0.732 |    0.74  |        0.736 |
-| MicroTokenizer_with_custom_model     |       0.884 |    0.844 |        0.864 |
-| MicroTokenizer_with_custom_CRF_model |       0.934 |    0.943 |        0.938 |
+| Algorithm                            | Precision   | Recall    | F1-measure   |
+|:-------------------------------------|:------------|:----------|:-------------|
+| jieba                                | 0.740       | 0.737     | 0.738        |
+| thulac                               | 0.732       | 0.745     | 0.738        |
+| nlpir                                | 0.485       | 0.651     | 0.556        |
+| ltp                                  | 0.794       | 0.809     | 0.801        |
+| MicroTokenizer_with_HMM              | 0.636       | 0.660     | 0.648        |
+| MicroTokenizer_with_DAG              | 0.460       | 0.625     | 0.530        |
+| MicroTokenizer_with_join_model       | 0.681       | 0.685     | 0.683        |
+| MicroTokenizer_with_CRF              | 0.732       | 0.740     | 0.736        |
+| MicroTokenizer_with_custom_model     | **0.884**   | **0.844** | **0.864**    |
+| MicroTokenizer_with_custom_CRF_model | 0.732       | 0.740     | 0.736        |
 
 #### PKU
-| Algorithm                            |   Precision |   Recall |   F1-measure |
-|:-------------------------------------|------------:|---------:|-------------:|
-| jieba                                |       0.853 |    0.787 |        0.818 |
-| thulac                               |       0.922 |    0.923 |        0.923 |
-| nlpir                                |       0.94  |    0.944 |        0.942 |
-| ltp                                  |       0.96  |    0.946 |        0.953 |
-| MicroTokenizer_with_HMM              |       0.742 |    0.774 |        0.758 |
-| MicroTokenizer_with_DAG              |       0.806 |    0.785 |        0.795 |
-| MicroTokenizer_with_join_model       |       0.82  |    0.754 |        0.786 |
-| MicroTokenizer_with_CRF              |       0.909 |    0.909 |        0.909 |
-| MicroTokenizer_with_custom_model     |       0.89  |    0.833 |        0.861 |
-| MicroTokenizer_with_custom_CRF_model |       0.925 |    0.906 |        0.915 |
+| Algorithm                            | Precision   | Recall    | F1-measure   |
+|:-------------------------------------|:------------|:----------|:-------------|
+| jieba                                | 0.853       | 0.787     | 0.818        |
+| thulac                               | 0.922       | 0.923     | 0.923        |
+| nlpir                                | 0.940       | 0.944     | 0.942        |
+| ltp                                  | **0.960**   | **0.946** | **0.953**    |
+| MicroTokenizer_with_HMM              | 0.742       | 0.774     | 0.758        |
+| MicroTokenizer_with_DAG              | 0.806       | 0.785     | 0.795        |
+| MicroTokenizer_with_join_model       | 0.820       | 0.754     | 0.786        |
+| MicroTokenizer_with_CRF              | 0.909       | 0.909     | 0.909        |
+| MicroTokenizer_with_custom_model     | 0.890       | 0.833     | 0.861        |
+| MicroTokenizer_with_custom_CRF_model | 0.909       | 0.909     | 0.909        |
 
 #### CityU
-| Algorithm                            |   Precision |   Recall |   F1-measure |
-|:-------------------------------------|------------:|---------:|-------------:|
-| jieba                                |       0.748 |    0.735 |        0.742 |
-| thulac                               |       0.73  |    0.745 |        0.738 |
-| nlpir                                |       0.452 |    0.622 |        0.524 |
-| ltp                                  |       0.783 |    0.801 |        0.792 |
-| MicroTokenizer_with_HMM              |       0.613 |    0.645 |        0.629 |
-| MicroTokenizer_with_DAG              |       0.425 |    0.593 |        0.495 |
-| MicroTokenizer_with_join_model       |       0.651 |    0.665 |        0.658 |
-| MicroTokenizer_with_CRF              |       0.721 |    0.732 |        0.726 |
-| MicroTokenizer_with_custom_model     |       0.87  |    0.835 |        0.852 |
-| MicroTokenizer_with_custom_CRF_model |       0.925 |    0.922 |        0.923 |
+| Algorithm                            | Precision   | Recall    | F1-measure   |
+|:-------------------------------------|:------------|:----------|:-------------|
+| jieba                                | 0.748       | 0.735     | 0.742        |
+| thulac                               | 0.730       | 0.745     | 0.738        |
+| nlpir                                | 0.452       | 0.622     | 0.524        |
+| ltp                                  | 0.783       | 0.801     | 0.792        |
+| MicroTokenizer_with_HMM              | 0.613       | 0.645     | 0.629        |
+| MicroTokenizer_with_DAG              | 0.425       | 0.593     | 0.495        |
+| MicroTokenizer_with_join_model       | 0.651       | 0.665     | 0.658        |
+| MicroTokenizer_with_CRF              | 0.721       | 0.732     | 0.726        |
+| MicroTokenizer_with_custom_model     | **0.870**   | **0.835** | **0.852**    |
+| MicroTokenizer_with_custom_CRF_model | 0.721       | 0.732     | 0.726        |
 
 
 ### 分词速度
-| Algorithm                      |   Time Cost (seconds) |
-|:-------------------------------|----------------------:|
-| jieba                          |               4.68979 |
-| thulac                         |              29.0849  |
-| nlpir                          |               3.19577 |
-| ltp                            |               7.45371 |
-| MicroTokenizer_with_HMM        |              79.4509  |
-| MicroTokenizer_with_DAG        |              14.9891  |
-| MicroTokenizer_with_join_model |             103.775   |
-| MicroTokenizer_with_CRF        |               5.63067 |
+| Algorithm                      | Time Cost (seconds)   |
+|:-------------------------------|:----------------------|
+| jieba                          | 5.200945              |
+| thulac                         | 26.046636             |
+| nlpir                          | **3.525668**          |
+| ltp                            | 8.330015              |
+| MicroTokenizer_with_HMM        | 73.935123             |
+| MicroTokenizer_with_DAG        | 15.714201             |
+| MicroTokenizer_with_join_model | 98.9159               |
+| MicroTokenizer_with_CRF        | 4.378366              |
 
 ## Roadmap
 * [TODO] 添加 HanLP 作为待评测中文分词器

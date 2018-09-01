@@ -131,14 +131,14 @@ python ./render_readme.py
 ### 分词速度
 | Algorithm                      | Time Cost (seconds)   |
 |:-------------------------------|:----------------------|
-| jieba                          | **4.418705**          |
-| thulac                         | 29.464871             |
-| nlpir                          | 6.336603              |
-| ltp                            | 7.853601              |
-| MicroTokenizer_with_HMM        | 76.525003             |
-| MicroTokenizer_with_DAG        | 12.585547             |
-| MicroTokenizer_with_join_model | 93.942338             |
-| MicroTokenizer_with_CRF        | 4.604901              |
+| jieba                          | 4.584929              |
+| thulac                         | 24.325698             |
+| nlpir                          | **2.93076**           |
+| ltp                            | 7.121927              |
+| MicroTokenizer_with_HMM        | 65.935579             |
+| MicroTokenizer_with_DAG        | 11.455589             |
+| MicroTokenizer_with_join_model | 88.025235             |
+| MicroTokenizer_with_CRF        | 4.161264              |
 
 ## Roadmap
 * [TODO] 添加 HanLP 作为待评测中文分词器

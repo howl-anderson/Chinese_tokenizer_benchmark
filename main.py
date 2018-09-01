@@ -62,7 +62,7 @@ def test_tokenizer_on_corpus(corpus, tokenizer):
     return corpus, tokenizer, score['PRECISION'], score['RECALL'], score['F1-MEASURE']
 
 
-def benchmark_test_performance():
+def benchmark_parallel_test_performance():
     all_corpus_list = corpus_registry.values()
     all_tokenizer_list = tokenizer_registry.keys()
 
@@ -80,6 +80,38 @@ def benchmark_test_performance():
         all_table[corpus].append(item)
 
     for corpus, table in all_table.items():
+        table = mark_table_cell_by_column_by_func(table, [1, 2, 3], make_a_value_function(max))
+
+        table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
+
+        result_file = os.path.join(current_dir_path, 'results', '{}.md'.format(corpus))
+
+        with open(result_file, 'w') as fd:
+            fd.write(table_content_string)
+
+
+def benchmark_sequence_test_performance():
+    all_corpus_list = corpus_registry.values()
+    all_tokenizer_list = tokenizer_registry.keys()
+
+    table_header = ["Algorithm", "Precision", "Recall", "F1-measure"]
+
+    for corpus in all_corpus_list:
+        table = []
+        for tokenizer in all_tokenizer_list:
+            print("working on {}+{}".format(corpus, tokenizer))
+            get_token_file(corpus, tokenizer)
+
+            score_file = do_evaluate(corpus, tokenizer)
+
+            score = parse_score(score_file)
+
+            print(score)
+
+            table.append(
+                [tokenizer, score['PRECISION'], score['RECALL'], score['F1-MEASURE']]
+            )
+
         table = mark_table_cell_by_column_by_func(table, [1, 2, 3], make_a_value_function(max))
 
         table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
@@ -129,5 +161,5 @@ def benchmark_test_speed():
 
 
 if __name__ == "__main__":
-    benchmark_test_performance()
+    benchmark_parallel_test_performance()
     benchmark_test_speed()

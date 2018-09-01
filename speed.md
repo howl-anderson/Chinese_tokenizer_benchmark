@@ -1,10 +1,10 @@
 | Algorithm                      | Time Cost (seconds)   |
 |:-------------------------------|:----------------------|
-| jieba                          | 5.200945              |
-| thulac                         | 26.046636             |
-| nlpir                          | **3.525668**          |
-| ltp                            | 8.330015              |
-| MicroTokenizer_with_HMM        | 73.935123             |
-| MicroTokenizer_with_DAG        | 15.714201             |
-| MicroTokenizer_with_join_model | 98.9159               |
-| MicroTokenizer_with_CRF        | 4.378366              |
+| jieba                          | **4.418705**          |
+| thulac                         | 29.464871             |
+| nlpir                          | 6.336603              |
+| ltp                            | 7.853601              |
+| MicroTokenizer_with_HMM        | 76.525003             |
+| MicroTokenizer_with_DAG        | 12.585547             |
+| MicroTokenizer_with_join_model | 93.942338             |
+| MicroTokenizer_with_CRF        | 4.604901              |

@@ -129,6 +129,7 @@ python ./render_readme.py
 
 
 ### 分词速度
+#### 测试结果
 | Algorithm                      | Time Cost (seconds)   |
 |:-------------------------------|:----------------------|
 | jieba                          | 4.584929              |
@@ -139,6 +140,21 @@ python ./render_readme.py
 | MicroTokenizer_with_DAG        | 11.455589             |
 | MicroTokenizer_with_join_model | 88.025235             |
 | MicroTokenizer_with_CRF        | 4.161264              |
+#### 测试硬件
+|                |                                          |
+|:---------------|-----------------------------------------:|
+| CPU            | Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz |
+| memory         |                                      16G |
+| OS             |                    macOS 10.13.6 (17G65) |
+| Python version |                                    3.6.5 |
+
+#### 测试语料
+|          |                |
+|:---------|---------------:|
+| 小说名   | 《平凡的世界》 |
+| 行数     |          11145 |
+| 文件大小 |           2.3M |
+
 
 ## Roadmap
 * [TODO] 添加 HanLP 作为待评测中文分词器

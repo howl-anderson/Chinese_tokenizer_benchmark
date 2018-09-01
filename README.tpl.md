@@ -76,7 +76,12 @@ python ./render_readme.py
 {% endfor %}
 
 ### 分词速度
-{{ speed_table }}
+#### 测试结果
+{{ speed }}
+#### 测试硬件
+{{ sysinfo }}
+#### 测试语料
+{{ big_corpus }}
 
 ## Roadmap
 * [TODO] 添加 HanLP 作为待评测中文分词器

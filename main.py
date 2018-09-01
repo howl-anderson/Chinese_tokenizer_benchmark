@@ -116,7 +116,7 @@ def benchmark_sequence_test_performance():
 
         table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
 
-        result_file = os.path.join(current_dir_path, 'results', '{}.md'.format(corpus))
+        result_file = os.path.join(current_dir_path, 'results', 'performance', '{}.md'.format(corpus))
 
         with open(result_file, 'w') as fd:
             fd.write(table_content_string)
@@ -154,7 +154,7 @@ def benchmark_test_speed():
 
     table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
 
-    result_file = os.path.join(current_dir_path, 'speed.md')
+    result_file = os.path.join(current_dir_path, 'results', 'others', 'speed.md')
 
     with open(result_file, 'w') as fd:
         fd.write(table_content_string)

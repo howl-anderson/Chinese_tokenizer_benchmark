@@ -141,7 +141,7 @@ python ./render_readme.py
 | MicroTokenizer_with_join_model | 88.025235             |
 | MicroTokenizer_with_CRF        | 4.161264              |
 #### 测试硬件
-|                |                                          |
+| 指标           |                                     参数 |
 |:---------------|-----------------------------------------:|
 | CPU            | Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz |
 | memory         |                                      16G |
@@ -149,7 +149,7 @@ python ./render_readme.py
 | Python version |                                    3.6.5 |
 
 #### 测试语料
-|          |                |
+| Key      |          Value |
 |:---------|---------------:|
 | 小说名   | 《平凡的世界》 |
 | 行数     |          11145 |

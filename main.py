@@ -162,4 +162,4 @@ def benchmark_test_speed():
 
 if __name__ == "__main__":
     benchmark_parallel_test_performance()
-    # benchmark_test_speed()
+    benchmark_test_speed()

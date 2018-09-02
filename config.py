@@ -8,6 +8,9 @@ from tokenizers import (
     tokenizer_MicroTokenizer_with_CRF,
     tokenizer_MicroTokenizer_with_custom_join_model,
     tokenizer_MicroTokenizer_with_custom_CRF_model,
+    tokenizer_MicroTokenizer_with_max_match_forward,
+    tokenizer_MicroTokenizer_with_max_match_backward,
+    tokenizer_MicroTokenizer_with_max_match_bidirectional
 )
 
 
@@ -33,6 +36,9 @@ tokenizer_registry.update(
         'MicroTokenizer_with_CRF': tokenizer_MicroTokenizer_with_CRF,
         'MicroTokenizer_with_custom_join_model': tokenizer_MicroTokenizer_with_custom_join_model,
         'MicroTokenizer_with_custom_CRF_model': tokenizer_MicroTokenizer_with_custom_CRF_model,
+        'MicroTokenizer_with_max_match_forward': tokenizer_MicroTokenizer_with_max_match_forward,
+        'MicroTokenizer_with_max_match_backward': tokenizer_MicroTokenizer_with_max_match_backward,
+        'MicroTokenizer_with_max_match_bidirectional': tokenizer_MicroTokenizer_with_max_match_bidirectional
     }
 )
 

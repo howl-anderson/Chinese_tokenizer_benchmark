@@ -127,9 +127,7 @@ def tokenizer_MicroTokenizer_with_custom_CRF_model(input_file, output_file, deli
 
 
 def tokenizer_MicroTokenizer_with_max_match_forward(input_file, output_file, delim="  ", corpus=None):
-    output_dir = os.path.join("MicroTokenizer_model", corpus)
-
-    tokenizer = Tokenizer(output_dir)
+    tokenizer = Tokenizer()
 
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
@@ -150,9 +148,7 @@ def tokenizer_MicroTokenizer_with_max_match_forward(input_file, output_file, del
 
 
 def tokenizer_MicroTokenizer_with_max_match_backward(input_file, output_file, delim="  ", corpus=None):
-    output_dir = os.path.join("MicroTokenizer_model", corpus)
-
-    tokenizer = Tokenizer(output_dir)
+    tokenizer = Tokenizer()
 
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
@@ -173,9 +169,7 @@ def tokenizer_MicroTokenizer_with_max_match_backward(input_file, output_file, de
 
 
 def tokenizer_MicroTokenizer_with_max_match_bidirectional(input_file, output_file, delim="  ", corpus=None):
-    output_dir = os.path.join("MicroTokenizer_model", corpus)
-
-    tokenizer = Tokenizer(output_dir)
+    tokenizer = Tokenizer()
 
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []

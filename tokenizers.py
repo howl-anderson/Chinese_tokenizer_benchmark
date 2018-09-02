@@ -42,7 +42,7 @@ def tokenizer_MicroTokenizer_with_DAG(input_file, output_file, delim="  ", corpu
         output_fd.writelines(output_lines)
 
 
-def tokenizer_MicroTokenizer_with_join_model(input_file, output_file, delim="  ", corpus=None):
+def tokenizer_MicroTokenizer_with_joint_model(input_file, output_file, delim="  ", corpus=None):
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:
@@ -80,7 +80,7 @@ def tokenizer_MicroTokenizer_with_CRF(input_file, output_file, delim="  ", corpu
         output_fd.writelines(output_lines)
 
 
-def tokenizer_MicroTokenizer_with_custom_model(input_file, output_file, delim="  ", corpus=None):
+def tokenizer_MicroTokenizer_with_custom_join_model(input_file, output_file, delim="  ", corpus=None):
     output_dir = os.path.join("MicroTokenizer_model", corpus)
 
     tokenizer = Tokenizer(output_dir)

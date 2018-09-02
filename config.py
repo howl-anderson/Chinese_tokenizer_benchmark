@@ -4,9 +4,9 @@ from tokenizers_collection.config import tokenizer_registry as collection_tokeni
 from tokenizers import (
     tokenizer_MicroTokenizer_with_HMM,
     tokenizer_MicroTokenizer_with_DAG,
-    tokenizer_MicroTokenizer_with_join_model,
+    tokenizer_MicroTokenizer_with_joint_model,
     tokenizer_MicroTokenizer_with_CRF,
-    tokenizer_MicroTokenizer_with_custom_model,
+    tokenizer_MicroTokenizer_with_custom_join_model,
     tokenizer_MicroTokenizer_with_custom_CRF_model,
 )
 
@@ -29,9 +29,9 @@ tokenizer_registry.update(
     {
         'MicroTokenizer_with_HMM': tokenizer_MicroTokenizer_with_HMM,
         'MicroTokenizer_with_DAG': tokenizer_MicroTokenizer_with_DAG,
-        'MicroTokenizer_with_join_model': tokenizer_MicroTokenizer_with_join_model,
+        'MicroTokenizer_with_joint_model': tokenizer_MicroTokenizer_with_joint_model,
         'MicroTokenizer_with_CRF': tokenizer_MicroTokenizer_with_CRF,
-        'MicroTokenizer_with_custom_model': tokenizer_MicroTokenizer_with_custom_model,
+        'MicroTokenizer_with_custom_join_model': tokenizer_MicroTokenizer_with_custom_join_model,
         'MicroTokenizer_with_custom_CRF_model': tokenizer_MicroTokenizer_with_custom_CRF_model,
     }
 )

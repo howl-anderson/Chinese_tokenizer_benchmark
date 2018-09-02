@@ -84,7 +84,7 @@ def benchmark_parallel_test_performance():
 
         table_content_string = tabulate(table, headers=table_header, tablefmt="pipe")
 
-        result_file = os.path.join(current_dir_path, 'results', '{}.md'.format(corpus))
+        result_file = os.path.join(current_dir_path, 'results', 'performance', '{}.md'.format(corpus))
 
         with open(result_file, 'w') as fd:
             fd.write(table_content_string)
@@ -162,4 +162,4 @@ def benchmark_test_speed():
 
 if __name__ == "__main__":
     benchmark_parallel_test_performance()
-    benchmark_test_speed()
+    # benchmark_test_speed()

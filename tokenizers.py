@@ -3,8 +3,13 @@ import os
 import MicroTokenizer
 from MicroTokenizer.tokenizer import Tokenizer
 
+tokenizer_loader = MicroTokenizer.load('core_pd_md')
+tokenizer = tokenizer_loader.get_tokenizer()
+
 
 def tokenizer_MicroTokenizer_with_HMM(input_file, output_file, delim="  ", corpus=None):
+    # tokenizer = Tokenizer()
+
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:
@@ -14,7 +19,7 @@ def tokenizer_MicroTokenizer_with_HMM(input_file, output_file, delim="  ", corpu
                 # empty line get empty result
                 result = ""
             else:
-                result = delim.join(MicroTokenizer.cut_by_HMM(line))
+                result = delim.join(tokenizer.cut_by_HMM(line))
 
             result_with_new_line = result + "\n"
 
@@ -24,6 +29,8 @@ def tokenizer_MicroTokenizer_with_HMM(input_file, output_file, delim="  ", corpu
 
 
 def tokenizer_MicroTokenizer_with_DAG(input_file, output_file, delim="  ", corpus=None):
+    # tokenizer = Tokenizer()
+
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:
@@ -33,7 +40,7 @@ def tokenizer_MicroTokenizer_with_DAG(input_file, output_file, delim="  ", corpu
                 # empty line get empty result
                 result = ""
             else:
-                result = delim.join(MicroTokenizer.cut_by_DAG(line))
+                result = delim.join(tokenizer.cut_by_DAG(line))
 
             result_with_new_line = result + "\n"
 
@@ -43,6 +50,8 @@ def tokenizer_MicroTokenizer_with_DAG(input_file, output_file, delim="  ", corpu
 
 
 def tokenizer_MicroTokenizer_with_joint_model(input_file, output_file, delim="  ", corpus=None):
+    # tokenizer = Tokenizer()
+
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:
@@ -52,7 +61,7 @@ def tokenizer_MicroTokenizer_with_joint_model(input_file, output_file, delim="  
                 # empty line get empty result
                 result = ""
             else:
-                result = delim.join(MicroTokenizer.cut_by_joint_model(line))
+                result = delim.join(tokenizer.cut_by_joint_model(line))
 
             result_with_new_line = result + "\n"
 
@@ -62,6 +71,8 @@ def tokenizer_MicroTokenizer_with_joint_model(input_file, output_file, delim="  
 
 
 def tokenizer_MicroTokenizer_with_CRF(input_file, output_file, delim="  ", corpus=None):
+    # tokenizer = Tokenizer()
+
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
         for raw_line in fp:
@@ -71,7 +82,7 @@ def tokenizer_MicroTokenizer_with_CRF(input_file, output_file, delim="  ", corpu
                 # empty line get empty result
                 result = ""
             else:
-                result = delim.join(MicroTokenizer.cut_by_CRF(line))
+                result = delim.join(tokenizer.cut_by_CRF(line))
 
             result_with_new_line = result + "\n"
 
@@ -127,7 +138,7 @@ def tokenizer_MicroTokenizer_with_custom_CRF_model(input_file, output_file, deli
 
 
 def tokenizer_MicroTokenizer_with_max_match_forward(input_file, output_file, delim="  ", corpus=None):
-    tokenizer = Tokenizer()
+    # tokenizer = Tokenizer()
 
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
@@ -148,7 +159,7 @@ def tokenizer_MicroTokenizer_with_max_match_forward(input_file, output_file, del
 
 
 def tokenizer_MicroTokenizer_with_max_match_backward(input_file, output_file, delim="  ", corpus=None):
-    tokenizer = Tokenizer()
+    # tokenizer = Tokenizer()
 
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
@@ -169,7 +180,7 @@ def tokenizer_MicroTokenizer_with_max_match_backward(input_file, output_file, de
 
 
 def tokenizer_MicroTokenizer_with_max_match_bidirectional(input_file, output_file, delim="  ", corpus=None):
-    tokenizer = Tokenizer()
+    # tokenizer = Tokenizer()
 
     with open(input_file, 'r') as fp, open(output_file, 'w') as output_fd:
         output_lines = []
